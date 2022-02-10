@@ -13,7 +13,7 @@
 > 5. clear(): 清空栈
 > 6. size(): 返回栈的大小
 > 7. toString(): toString方法
->## 代码实现
+## 代码实现
 ### 基于数组实现栈的常用方法
 ```javascript
 function Stack(){

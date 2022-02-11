@@ -1,0 +1,12 @@
+{
+  "name": "stack",
+  "version": "1.0.0",
+  "description": "算法学习，永无止境，本仓库主要记录自己学习算法的一些笔记。内容主要参考《学习JavaScript数据结构与算法》第三版\r # 基本的数据结构 - 栈\r ## 栈的概念特点\r > 1. 有序集合；\r > 2. 遵循后进先出（LIFO）原则；\r > 3. 新元素靠近栈顶，旧元素靠近栈底。\r ## 栈常用的方法\r > 1. push(element): 添加新元素到栈顶\r > 2. pop(): 移除栈顶元素，同时返回被移除的元素\r > 3. peek(): 只查看栈顶元素，不修改栈的元素\r > 4. isEmpty(): 判空，栈为空返回true,反之false\r > 5. clear(): 清空栈\r > 6. size(): 返回栈的大小\r > 7. toString(): toString方法\r >## 代码实现\r ### 基于数组实现栈的常用方法\r ```javascript\r function Stack(){\r     // 栈中的属性\r     this.items = [];\r     // 栈相关的操作",
+  "main": "CreateStack.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

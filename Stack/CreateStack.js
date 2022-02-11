@@ -1,4 +1,4 @@
-function Stack(){
+export function Stack(){
     // 栈中的属性
     this.items = [];
     // 栈相关的操作
@@ -37,9 +37,9 @@ function Stack(){
     }
 }
 
-let stack = new Stack();
-stack.push(10);
-stack.push(13);
-stack.push(12);
-stack.push(15);
-console.log(stack);
+// let stack = new Stack();
+// stack.push(10);
+// stack.push(13);
+// stack.push(12);
+// stack.push(15);
+// console.log(stack);

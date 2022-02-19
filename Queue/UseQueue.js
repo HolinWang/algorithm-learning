@@ -2,7 +2,7 @@
  * @Author: Holin Wang
  * @Date: 2022-02-19 23:25:52
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-02-20 00:31:55
+ * @LastEditTime: 2022-02-20 00:48:33
  * @Description: 击鼓传花游戏
         例如有10个人围成一圈，把花从第一个人开始传递，在每次数到3的
         时候，花在谁手里，谁就淘汰，直到剩余最后一个人，就是胜者。

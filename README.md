@@ -6,8 +6,8 @@
 ### [数组](https://github.com/HolinWang/algorithm-learning/tree/main/Array#readme)
 ### [栈](https://github.com/HolinWang/algorithm-learning/tree/main/Stack#readme)
 ### [队列](https://github.com/HolinWang/algorithm-learning/tree/main/Queue#readme)
-#### [队列](https://github.com/HolinWang/algorithm-learning/tree/main/Queue#readme)
-#### 双端队列
+> 1. [队列](https://github.com/HolinWang/algorithm-learning/tree/main/Queue#readme)
+> 2. 双端队列
 ### 线性表
 ### 串
 ## 非线性结构

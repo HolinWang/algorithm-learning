@@ -10,7 +10,11 @@
 > 1. [队列](https://github.com/HolinWang/algorithm-learning/tree/main/Queue#readme)
 > 2. [双端队列](https://github.com/HolinWang/algorithm-learning/blob/main/Queue/DoubleEndedQueue/README.md)
 > 3. [优先级队列](https://github.com/HolinWang/algorithm-learning/tree/main/Queue/PriorityQueue#readme)
-### 线性表
+### [链表](https://github.com/HolinWang/algorithm-learning/tree/main/LinkedList/LinkedList#readme)
+> 1. [单向链表](https://github.com/HolinWang/algorithm-learning/tree/main/LinkedList/LinkedList#readme)
+> 2. 双向链表
+> 3. 循环链表
+> 4. 排序链表
 ### 串
 ## 非线性结构
 ### 树

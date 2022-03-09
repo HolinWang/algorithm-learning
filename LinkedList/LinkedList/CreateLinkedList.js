@@ -2,16 +2,15 @@
  * @Author: Holin Wang
  * @Date: 2022-03-08 08:47:30
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-03-08 22:09:48
+ * @LastEditTime: 2022-03-09 22:11:24
  * @Description: 单向链表的封装
  */
-export function LinkedList(){
+function LinkedList(){
     // 内部节点类
     function Node(data){
         this.data = data;
         this.next = null;
     }
-
     // 属性
     this.head = null; //链表的第一个节点
     this.length = 0;  //用来记录链表的长度
@@ -35,6 +34,45 @@ export function LinkedList(){
         // 3. length+1
         this.length += 1;
     }
+    // 2. toString方法
+    LinkedList.prototype.toString = function(){
+        // 1. 定义变量
+        let current = this.head;
+        let listStr = "";
+        // 2. 循环每个节点
+        while(current){
+            listStr += current.data +" ";
+            current = current.next;
+        }
+        return listStr;
+    }
+
+    // 3. 向链表指定位置添加元素
+    LinkedList.prototype.insert = function(position,data){
+        // 1. 越界判断
+        if(position < 0 || position > this.length){
+            return false;
+        }
+        // 2. 根据data创建node
+        const newData = new Node(data);
+        if(position === 0){
+            newData.next = this.head; // 相当于newData.next = null;
+            this.head = newData;
+        }else{
+            let index = 0;
+            let current = this.head;
+            let previous = null;
+            while(index++ < position){
+                previous = current;
+                current = current.next;
+            }
+            previous.next = newData;
+            newData.next = current; 
+        }
+        // 4. length+1
+        this.length += 1;
+        return true;
+    }
 }
 
 // 测试
@@ -45,4 +83,7 @@ linkedList.append("abc");
 linkedList.append("awd");
 linkedList.append("ert");
 linkedList.append("bff");
-console.log(linkedList)
+// console.log(linkedList);
+
+linkedList.insert(2,"p");
+console.log(linkedList.toString())

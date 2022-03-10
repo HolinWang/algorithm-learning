@@ -2,7 +2,7 @@
  * @Author: Holin Wang
  * @Date: 2022-03-04 16:41:48
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-03-04 22:24:47
+ * @LastEditTime: 2022-03-09 20:12:16
  * @Description: 链表的实现及应用
 -->
 # algorithm-learning
@@ -25,3 +25,6 @@
 > 6. size(): 返回队列的大小
 > 7. toString(): toString方法
 ## 链表的实现
+```javascript
+
+```

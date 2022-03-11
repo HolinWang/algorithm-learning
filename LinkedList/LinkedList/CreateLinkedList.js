@@ -2,7 +2,7 @@
  * @Author: Holin Wang
  * @Date: 2022-03-08 08:47:30
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-03-10 22:29:11
+ * @LastEditTime: 2022-03-11 22:31:35
  * @Description: 单向链表的封装
  */
 function LinkedList() {
@@ -90,21 +90,39 @@ function LinkedList() {
   };
 
   // 5. 返回元素在链表中的索引，不存在返回-1
-  LinkedList.prototype.indexOf = function(data){
+  LinkedList.prototype.indexOf = function (data) {
     //1. 定义变量
     let current = this.head;
     let index = 0;
     // 2. 开始查找
-    while(current){
-        if(current.data === data){
-            return index;
-        }
-        current = current.next;
-        index += 1;
+    while (current) {
+      if (current.data === data) {
+        return index;
+      }
+      current = current.next;
+      index += 1;
     }
     // 3. 没有找到
     return -1;
-  }
+  };
+
+  // 6. 修改指定位置的元素
+  LinkedList.prototype.update = function (position, newData) {
+    // 1. 越界判断
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+    // 2.查找正确的位置
+    let current = this.head;
+    let index = 0;
+    while (index++ < position) {
+      current = current.next;
+    }
+    current.data = newData;
+    return true;
+  };
+ 
+
 }
 
 // 测试

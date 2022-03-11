@@ -2,7 +2,7 @@
  * @Author: Holin Wang
  * @Date: 2022-03-04 16:41:48
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-03-10 22:33:16
+ * @LastEditTime: 2022-03-11 22:31:53
  * @Description: 链表的实现及应用
 -->
 # algorithm-learning
@@ -133,5 +133,21 @@ function LinkedList() {
     // 3. 没有找到
     return -1;
   }
+
+    // 6. 修改指定位置的元素
+  LinkedList.prototype.update = function (position, newData) {
+    // 1. 越界判断
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+    // 2.查找正确的位置
+    let current = this.head;
+    let index = 0;
+    while (index++ < position) {
+      current = current.next;
+    }
+    current.data = newData;
+    return true;
+  };
 }
 ```

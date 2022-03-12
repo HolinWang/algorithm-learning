@@ -2,7 +2,7 @@
  * @Author: Holin Wang
  * @Date: 2022-03-08 08:47:30
  * @LastEditors: Holin Wang
- * @LastEditTime: 2022-03-11 22:31:35
+ * @LastEditTime: 2022-03-12 15:05:04
  * @Description: 单向链表的封装
  */
 function LinkedList() {
@@ -121,8 +121,44 @@ function LinkedList() {
     current.data = newData;
     return true;
   };
- 
-
+  // 7. 删除指定的位置的元素
+  LinkedList.prototype.removeAt = function (position) {
+    // 1. 越界判断
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+    // 2. 判斷刪除的是否是第一个
+    let current = this.head;
+    if (position === 0) {
+      this.head = null;
+    } else {
+      let index = 0;
+      let previous = null;
+      while (index++ < position) {
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+    //3. length - 1
+    this.length -= 1;
+    return current.data;
+  };
+  // 8. remove方法
+  LinkedList.prototype.remove = function (data) {
+    // 1. 获取data在链表中的位置
+    let position = this.indexOf(data);
+    // 2. 根据位置删除节点
+    return this.removeAt(position);
+  };
+  // 9. isEmpty方法
+  LinkedList.prototype.isEmpty = function () {
+    return this.length === 0;
+  };
+  // 10. size方法
+  LinkedList.prototype.size = function () {
+    return this.length;
+  };
 }
 
 // 测试
@@ -139,4 +175,9 @@ linkedList.insert(2, "p");
 // console.log(linkedList.toString());
 
 console.log(linkedList.get(2));
-console.log(linkedList.indexOf("awd"));
+
+console.log(linkedList.indexOf("awdd"));
+console.log(linkedList.update(2, "awdd"));
+linkedList.removeAt(2);
+linkedList.remove("ert");
+console.log(JSON.stringify(linkedList));

@@ -18,13 +18,35 @@
 > 7. 双向链表的最后的节点的next为null。
 ##  双向链表常用的方法
 > 1. enQueue(element): 添加新元素到队列尾部
-> 2. deQueue(): 删除队列的第一项元素，并将其返回
-> 3. peek(): 只查看队列的第一项元素
-> 4. isEmpty(): 判空，队列为空返回true,反之false
-> 5. clear(): 清空队列
-> 6. size(): 返回队列的大小
-> 7. toString(): toString方法
+> 2. insert(position,element): 向列表的特定位置插入一个新的项
+> 3. get(position): 获取对应位置的元素
+> 4. indexOf(element): 返回元素在列表中的索引，如果没有则返回-1
+> 5. update(position): 修改某个位置的元素
+> 6. removeAt(position): 从列表的特定位置移除一项
+> 7. remove(element): 从列表中移除一项
+> 8. isEmpty(): 判空，队列为空返回true,反之false
+> 9. size(): 返回队列的大小
+> 10. toString(): toString方法
+
 ##  双向链表的实现
 ```javascript
-
+/*
+ * @Author: Holin Wang
+ * @Date: 2022-03-16 21:10:45
+ * @LastEditors: Holin Wang
+ * @LastEditTime: 2022-03-16 21:11:48
+ * @Description: 双向链表的实现
+ */
+function CreateDoublyLinkedList(){
+    // 内部类
+    function Node(data){
+        this.data = data;
+        this.prev = null;
+        this.next = null;
+    }
+    // 属性
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+}
 ```

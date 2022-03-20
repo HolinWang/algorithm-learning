@@ -28,6 +28,8 @@
 > 8. isEmpty(): 判空，队列为空返回true,反之false
 > 9. size(): 返回队列的大小
 > 10. toString(): toString方法
+> 11. forwardString(): 返回正向遍历的节点字符串形式
+> 12. backswordString():返回反向遍历的节点的字符串形式
 
 
 ##  双向链表的实现
@@ -53,15 +55,15 @@ function DoublyLinkedList() {
 
 
     // 定义相关的操作方法
-    // 在尾部追加数据
+    // 1. append方法
     DoublyLinkedList.prototype.append = function (element) {
         // 1. 根据元素创建节点
         let newNode = new Node(element);
         // 2. 判断列表是否为空
-        if(this.head === null){
+        if (this.head === null) {
             this.head = newNode;
             this.tail = newNode;
-        }else{
+        } else {
             this.tail.next = newNode;
             newNode.prev = this.tail;
             this.tail = newNode;
@@ -69,11 +71,51 @@ function DoublyLinkedList() {
         // 3. length +1
         this.length += 1;
     }
+    // 2. 将字符串转换为字符串形式
+    // 2.1 toString方法
+    DoublyLinkedList.prototype.toString = function () {
+        return this.backswordString();
+    }
+
+    // 2.2 forwardString方法
+    DoublyLinkedList.prototype.forwardString = function () {
+        // 1. 定义变量
+        let current = this.tail;
+        let resString = "";
+
+        // 2. 循环遍历
+        while (current) {
+            resString += current.data + " ";
+            current = current.prev;
+        }
+        return resString;
+    }
+
+    // 2.3 backswordString方法
+    DoublyLinkedList.prototype.backswordString = function () {
+        // 1. 定义变量
+        let current = this.head;
+        let resString = "";
+
+        // 2. 循环遍历
+        while (current) {
+            resString += current.data + " ";
+            current = current.next;
+        }
+        return resString;
+    }
 }
 
 let doublyLinkedList = new DoublyLinkedList();
+// append test
 doublyLinkedList.append("aaa");
 doublyLinkedList.append("bbb");
 doublyLinkedList.append("ccc");
-console.log(doublyLinkedList);
+// console.log(doublyLinkedList);
+
+console.log(doublyLinkedList.toString());
+
+console.log(doublyLinkedList.forwardString());
+
+console.log(doublyLinkedList.backswordString());
 ```

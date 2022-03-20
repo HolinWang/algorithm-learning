@@ -8,6 +8,7 @@
 # algorithm-learning
 算法学习，永无止境，本仓库主要记录自己学习算法的一些笔记。内容主要参考《学习JavaScript数据结构与算法》第三版
 # 基本的数据结构 - 双向链表
+![alt 双向链表基本结构](./img/双向链表.png)
 ## 双向链表的概念特点
 > 1. 既可以从头遍历到尾，又可以从尾遍历到头；
 > 2. 链表相连的过程是双向的（每个节点既指向下一个引用，同时指向前一个引用）；
@@ -17,7 +18,7 @@
 > 6. 双向链表的第一个节点的prev为null；
 > 7. 双向链表的最后的节点的next为null。
 ##  双向链表常用的方法
-> 1. enQueue(element): 添加新元素到队列尾部
+> 1. append(element): 添加新元素到队列尾部
 > 2. insert(position,element): 向列表的特定位置插入一个新的项
 > 3. get(position): 获取对应位置的元素
 > 4. indexOf(element): 返回元素在列表中的索引，如果没有则返回-1
@@ -28,6 +29,7 @@
 > 9. size(): 返回队列的大小
 > 10. toString(): toString方法
 
+
 ##  双向链表的实现
 ```javascript
 /*
@@ -37,9 +39,9 @@
  * @LastEditTime: 2022-03-16 21:11:48
  * @Description: 双向链表的实现
  */
-function CreateDoublyLinkedList(){
+function DoublyLinkedList() {
     // 内部类
-    function Node(data){
+    function Node(data) {
         this.data = data;
         this.prev = null;
         this.next = null;
@@ -48,5 +50,30 @@ function CreateDoublyLinkedList(){
     this.head = null;
     this.tail = null;
     this.length = 0;
+
+
+    // 定义相关的操作方法
+    // 在尾部追加数据
+    DoublyLinkedList.prototype.append = function (element) {
+        // 1. 根据元素创建节点
+        let newNode = new Node(element);
+        // 2. 判断列表是否为空
+        if(this.head === null){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        // 3. length +1
+        this.length += 1;
+    }
 }
+
+let doublyLinkedList = new DoublyLinkedList();
+doublyLinkedList.append("aaa");
+doublyLinkedList.append("bbb");
+doublyLinkedList.append("ccc");
+console.log(doublyLinkedList);
 ```

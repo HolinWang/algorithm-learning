@@ -68,6 +68,45 @@ function DoublyLinkedList() {
         }
         return resString;
     }
+
+    // 3. insert方法
+    DoublyLinkedList.prototype.insert = function (position, element) {
+        // 1.判断越界的问题
+        if (position < 0 || position > this.length) {
+            return false;
+        }
+        // 2. 创建新的节点
+        let newNode = new Node(element);
+        // 3. 判断插入位置
+        if (position === 0) {                     // 插入首位
+            // 链表为空
+            if (this.head == null) {
+                this.head = newNode;
+                this.tail = newNode;
+            } else {
+                this.head.prev = newNode;
+                newNode.next = this.head;
+                this.head = newNode;
+            }
+        } else if (position === this.length) {    // 插入尾部
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        } else {                                // 插入中间
+            // 定义属性
+            let current = this.head;
+            let index = 0;
+            while (index++ < position) {
+                current = current.next;
+            }
+            newNode.next = current;
+            newNode.prev = current.prev;
+            current.prev.next = newNode;
+            current.prev = newNode;
+        }
+        // 4. length + 1
+        this.length += 1;
+    }
 }
 
 let doublyLinkedList = new DoublyLinkedList();
@@ -76,9 +115,11 @@ doublyLinkedList.append("aaa");
 doublyLinkedList.append("bbb");
 doublyLinkedList.append("ccc");
 // console.log(doublyLinkedList);
-
+doublyLinkedList.insert(0, 'a');
+doublyLinkedList.insert(2, 'b');
+doublyLinkedList.insert(4, 'd');
 console.log(doublyLinkedList.toString());
 
-console.log(doublyLinkedList.forwardString());
+// console.log(doublyLinkedList.forwardString());
 
-console.log(doublyLinkedList.backswordString());
+// console.log(doublyLinkedList.backswordString());

@@ -143,6 +143,30 @@ function DoublyLinkedList() {
         // 4. length + 1
         this.length += 1;
     }
+
+
+    // 4. get 获取对应位置的元素
+    DoublyLinkedList.prototype.get = function (position) {
+        // 1.判断越界的问题
+        if (position < 0 || position >= this.length) {
+            return false;
+        }
+        let index = 0;
+        let current = this.head;
+        // 提高查询效率
+        if((this.length / 2) > position){
+            while (index++ < position) {
+                current = current.next;
+            }
+        }else{
+            current = this.tail;
+            index = this.length - 1;
+            while(index-- > position){
+                current = current.prev;
+            }
+        }
+        return current.data;
+    }
 }
 
 let doublyLinkedList = new DoublyLinkedList();
@@ -155,6 +179,7 @@ doublyLinkedList.insert(0, 'a');
 doublyLinkedList.insert(2, 'b');
 doublyLinkedList.insert(4, 'd');
 console.log(doublyLinkedList.toString());
+console.log(doublyLinkedList.get(3));
 
 // console.log(doublyLinkedList.forwardString());
 

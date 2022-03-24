@@ -168,17 +168,54 @@ function DoublyLinkedList() {
     current.data = newData;
   }
 
-  // 7. removeAt 获取对应位置的元素
+  // 7. removeAt 根据对应位置删除元素
   DoublyLinkedList.prototype.removeAt = function (position) {
     // 1.判断越界的问题
     if (position < 0 || position > this.length) {
       return false;
     }
-
+    // 2. 判断删除的位置
+    let current = this.head;
+    if (this.length > 0 && this.length < 2) {   //只有一个节点
+      this.head = null;
+      this.tail = null;
+    } else {
+      if (position === 0) {                     //删除第一个
+        this.head = this.head.next;
+        this.head.prev = null;
+      } else if (position === this.length - 1) { // 删除最后一个 
+        current = this.tail;
+        this.tail = this.tail.prev;
+        this.tail.next = null;
+      } else {                                   //删除中间的
+        let index = 0;
+        // 提高查询效率
+        if (this.length / 2 > position) {
+          while (index++ < position) {
+            current = current.next;
+          }
+        } else {
+          let index = this.length - 1;
+          current = this.tail;
+          while (index-- > position) {
+            current = current.prev;
+          }
+        }
+        current.prev.next = current.next;
+        current.next.prev = current.prev;
+      }
+    }
+    this.length -= 1;
+    // 返回被删除的节点
+    return current.data;
   }
-
+  // 8. remove 删除元素
+  DoublyLinkedList.prototype.remove = function (data) {
+    // 1. 获取下标
+    let index = this.indexOf(data);
+    return this.removeAt(index);
+  }
 }
-
 let doublyLinkedList = new DoublyLinkedList();
 // append test
 doublyLinkedList.append("aaa");
@@ -190,11 +227,13 @@ doublyLinkedList.insert(2, 'b');
 doublyLinkedList.insert(4, 'd');
 
 doublyLinkedList.update(1, "h")
-
 console.log(doublyLinkedList.toString());
-console.log(doublyLinkedList.get(3));
+doublyLinkedList.removeAt(2);
+doublyLinkedList.remove("bbb")
 console.log(doublyLinkedList.toString());
-console.log(doublyLinkedList.indexOf("a"));
+// console.log(doublyLinkedList.get(3));
+// console.log(doublyLinkedList.toString());
+// console.log(doublyLinkedList.indexOf("a"));
 // console.log(doublyLinkedList.forwardString());
 
 // console.log(doublyLinkedList.backswordString());

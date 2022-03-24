@@ -18,15 +18,15 @@
 > 6. 双向链表的第一个节点的prev为null；
 > 7. 双向链表的最后的节点的next为null。
 ##  双向链表常用的方法
-> 1. append(element): 添加新元素到队列尾部
+> 1. append(element): 添加新元素到链表尾部
 > 2. insert(position,element): 向列表的特定位置插入一个新的项
 > 3. get(position): 获取对应位置的元素
 > 4. indexOf(element): 返回元素在列表中的索引，如果没有则返回-1
 > 5. update(position): 修改某个位置的元素
 > 6. removeAt(position): 从列表的特定位置移除一项
 > 7. remove(element): 从列表中移除一项
-> 8. isEmpty(): 判空，队列为空返回true,反之false
-> 9. size(): 返回队列的大小
+> 8. isEmpty(): 判空，链表为空返回true,反之false
+> 9. size(): 返回链表的大小
 > 10. toString(): toString方法
 > 11. forwardString(): 返回正向遍历的节点字符串形式
 > 12. backswordString():返回反向遍历的节点的字符串形式

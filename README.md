@@ -13,7 +13,7 @@
 ### [链表](https://github.com/HolinWang/algorithm-learning/tree/main/LinkedList/LinkedList#readme)
 > 1. [单向链表](https://github.com/HolinWang/algorithm-learning/tree/main/LinkedList/LinkedList#readme)
 > 2. [双向链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/DoublyLinkedList/README.md)
-> 3. 循环链表
+> 3. [循环链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/LoopLinkedList/README.md)
 > 4. 排序链表
 ### 串
 ## 非线性结构

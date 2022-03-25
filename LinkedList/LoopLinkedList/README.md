@@ -20,6 +20,7 @@
 > 6. size(): 返回队列的大小
 > 7. toString(): toString方法
 ## 循环链表的实现
+> 这里只实现insert 和 remove方法，其他方法和普通的链表实现方法
 ```javascript
 /*
  * @Author: Holin Wang

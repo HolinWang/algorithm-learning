@@ -12,12 +12,13 @@ function LoopLinkedList() {
   LoopLinkedList.prototype.append = function (data) {
     // 1. 创建新节点
     const newNode = new Node(data);
-    if (this.length === 0) {
+    let current = this.head;
+    if (!this.head) {
       this.head = newNode;
-      // newNode.next = this.head;
+      newNode.next = this.head;
     } else {
-      let current = this.head;
-      while (current.next) {
+      // 找到最后一个节点
+      while (current.next !== this.head) {
         current = current.next;
       }
       current.next = newNode;
@@ -25,6 +26,7 @@ function LoopLinkedList() {
     }
 
     this.length += 1;
+    return true
   }
 
   // 2. insert方法

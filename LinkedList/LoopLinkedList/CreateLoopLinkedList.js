@@ -59,15 +59,43 @@ function LoopLinkedList() {
     }
     this.length += 1;
   }
-}
 
+  // 2.removeAt方法
+  LoopLinkedList.prototype.removeAt = function (position) {
+    // 1. 越界判断
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+    let current = this.head;
+    // 2. 判断删除的位置
+    if (position === 0) {
+      // 注意这里是循环链表，删除第一个之后，需要将最后那一个节点的next重新指向新的this.head
+      while (current.next !== this.head) {
+        current = current.next;
+      }
+      this.head = this.head.next;
+      current.next = this.head;
+    } else {
+      let index = 0;
+      let previous = null;
+      while (index++ < position) {
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+    this.length -= 1;
+  }
+}
 
 const loopLinkedList = new LoopLinkedList();
 
 loopLinkedList.append("aaa");
 loopLinkedList.append("bbb");
 loopLinkedList.append("ccc");
-// loopLinkedList.insert(0, "a0");
+loopLinkedList.append("ddd");
+loopLinkedList.insert(1, "a0");
 console.log(loopLinkedList);
-loopLinkedList.insert(1, "a3");
+// loopLinkedList.insert(1, "a3");
+loopLinkedList.removeAt(4);
 console.log(loopLinkedList);

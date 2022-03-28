@@ -14,8 +14,8 @@
 > 1. [单向链表](https://github.com/HolinWang/algorithm-learning/tree/main/LinkedList/LinkedList/README.md)
 > 2. [双向链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/DoublyLinkedList/README.md)
 > 3. [循环链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/LoopLinkedList/README.md)
->> 3.1 [单向循环链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/LoopLinkedList/README.md)
->> 3.2 双向循环链表
+> >[单向循环链表](https://github.com/HolinWang/algorithm-learning/blob/main/LinkedList/LoopLinkedList/README.md)
+> >双向循环链表
 > 4. 排序链表
 ### 串
 ## 非线性结构

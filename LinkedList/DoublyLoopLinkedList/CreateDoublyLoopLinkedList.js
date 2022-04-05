@@ -14,7 +14,6 @@ function DoublyLoopLinkedList() {
 
   //1. append方法
   DoublyLoopLinkedList.prototype.append = function (element) {
-
     // 1. 创建节点
     let newNode = new Node(element);
     // 2. 判断是否尾空
@@ -35,6 +34,19 @@ function DoublyLoopLinkedList() {
 
     this.length += 1;
   }
+
+  // 2. insert方法 考虑三个位置 头、尾以及中间
+  DoublyLoopLinkedList.prototype.insert(position, element){
+    // 1.判断越界的问题
+    if (position < 0 || position > this.length) {
+      return false;
+    }
+
+
+  }
+
+
+
 }
 
 

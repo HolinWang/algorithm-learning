@@ -36,17 +36,26 @@ function DoublyLoopLinkedList() {
   }
 
   // 2. insert方法 考虑三个位置 头、尾以及中间
-  DoublyLoopLinkedList.prototype.insert(position, element){
+  DoublyLoopLinkedList.prototype.insert = function (position, element) {
     // 1.判断越界的问题
     if (position < 0 || position > this.length) {
       return false;
     }
-
+    if (position === 0) {
+      if (this.head === null) {
+        this.head = newNode;
+        this.tail = newNode;
+        newNode.next = this.tail;
+        newNode.prev = this.head;
+      } else {
+        newNode.next = this.head;
+        this.head.prev = newNode;
+        this.head = newNode;
+        newNode.prev = this.tail;
+      }
+    }
 
   }
-
-
-
 }
 
 

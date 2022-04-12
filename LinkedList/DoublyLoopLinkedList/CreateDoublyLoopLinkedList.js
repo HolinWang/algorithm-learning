@@ -41,7 +41,7 @@ function DoublyLoopLinkedList() {
     if (position < 0 || position > this.length) {
       return false;
     }
-    if (position === 0) {
+    if (position === 0) {                               //向头部添加
       if (this.head === null) {
         this.head = newNode;
         this.tail = newNode;
@@ -53,8 +53,24 @@ function DoublyLoopLinkedList() {
         this.head = newNode;
         newNode.prev = this.tail;
       }
+    } else if (position === this.length) {               //向尾部添加
+      let current = this.tail;
+      current.next = newNode;
+      newNode.prev = current;
+      this.tail = newNode;
+      newNode.next = this.head;
+    } else {                                             //向中间添加
+      let current = this.head;
+      let index = 0;
+      let previous = null;
+      while (index++ < position) {
+        previous.next = newNode;
+        newNode.prev = previous;
+        newNode.next = current;
+        current.prev = newNode;
+      }
     }
-
+    this.length += 1;
   }
 }
 
